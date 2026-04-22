@@ -72,6 +72,7 @@ Volume-Based Indicators:
         prompt = prompt.partial(instrument_context=instrument_context)
 
         chain = prompt | llm.bind_tools(tools)
+        time.sleep(5)
 
         result = chain.invoke(state["messages"])
 
